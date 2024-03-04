@@ -1,0 +1,25 @@
+.gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    transition: all .2s;
+
+
+   @include respond(phone) {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    &__image {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 1rem;
+
+        &:hover {
+            outline: .5rem solid $color-primary;
+            transform: scale(1.05) translateY(-1.5rem);
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+        }
+    }
+}
