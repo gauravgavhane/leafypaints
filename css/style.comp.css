@@ -171,6 +171,24 @@ body {
 .u-margin-top-huge {
   margin-top: 10rem !important; }
 
+.u-padding-top-bottom {
+  padding: 4rem 0 5rem 0; }
+  @media only screen and (max-width: 56.25em) {
+    .u-padding-top-bottom {
+      padding: 2.5rem 0 3rem 0; } }
+  @media only screen and (max-width: 37.5em) {
+    .u-padding-top-bottom {
+      padding: 1.5rem 0 4rem 0; } }
+
+.u-padding-top-bottom-medium {
+  padding: 4rem 0 4rem 0; }
+  @media only screen and (max-width: 56.25em) {
+    .u-padding-top-bottom-medium {
+      padding: 5.25rem 0 3rem 0; } }
+  @media only screen and (max-width: 37.5em) {
+    .u-padding-top-bottom-medium {
+      padding: 4rem 0 4rem 0; } }
+
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -370,7 +388,6 @@ body {
   .composition__photo {
     width: 57.5%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-    border-radius: 2px;
     position: absolute;
     z-index: 10;
     transition: all .2s;
@@ -806,32 +823,7 @@ body {
   display: flex;
   margin: 0 10% 0 10%;
   flex-direction: column;
-  padding-bottom: 5%;
   letter-spacing: .075rem; }
-  .about__heading {
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    display: inline-block;
-    background-image: linear-gradient(to right, #7ed56f, #28b485);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    letter-spacing: .2rem;
-    transition: all .2s;
-    padding: 4rem 0 5rem 0;
-    text-align: center; }
-    @media only screen and (max-width: 56.25em) {
-      .about__heading {
-        padding: 3rem 0 3rem 0;
-        font-size: 3rem; } }
-    @media only screen and (max-width: 37.5em) {
-      .about__heading {
-        padding: 2rem 0 5rem 0;
-        font-size: 2.5rem; } }
-    .about__heading:hover {
-      transform: scale(1.05);
-      text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
   .about__title {
     font-size: 2rem;
     font-weight: 700;
@@ -864,6 +856,25 @@ body {
         margin-bottom: 0; } }
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
+
+.gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  transition: all .2s; }
+  @media only screen and (max-width: 37.5em) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr); } }
+  .gallery__image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 1rem; }
+    .gallery__image:hover {
+      outline: 0.5rem solid #55c57a;
+      transform: scale(1.05) translateY(-1.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5); }
 
 .section-about {
   background-color: #f7f7f7;
@@ -901,39 +912,38 @@ body {
 
 .section-stories {
   position: relative;
-  padding: 15rem 0; }
+  padding: 5rem 0; }
   @media only screen and (max-width: 56.25em) {
     .section-stories {
-      padding: 10rem 0; } }
+      padding: 5rem 0; } }
   @media only screen and (max-width: 37.5em) {
     .section-stories {
       padding: 5rem 1rem; } }
-
-.section-aboutus {
-  background-color: #f7f7f7;
-  padding: 25rem 5; }
-  @media only screen and (max-width: 56.25em) {
-    .section-aboutus {
-      padding: 2.5rem 0; } }
-  @media only screen and (max-width: 37.5em) {
-    .section-aboutus {
-      padding: 3rem 0; } }
 
 .section-feature {
   padding: 5rem 0; }
 
 .section-gallery {
-  background-color: #f7f7f7;
-  padding: 25rem 5; }
+  padding-bottom: 3rem; }
   @media only screen and (max-width: 56.25em) {
     .section-gallery {
-      padding: 20rem 0; } }
+      padding: 2.5rem 2rem 2rem 2rem; } }
   @media only screen and (max-width: 37.5em) {
     .section-gallery {
-      padding: 25rem 0; } }
+      padding: 2.75rem 1rem 0 1rem; } }
+
+.section-stories-all {
+  position: relative;
+  padding: .5rem 0; }
+  @media only screen and (max-width: 56.25em) {
+    .section-stories-all {
+      padding: 3.5rem 0; } }
+  @media only screen and (max-width: 37.5em) {
+    .section-stories-all {
+      padding: 2.75rem 1rem; } }
 
 .story {
-  width: 75%;
+  width: 80%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.6);
