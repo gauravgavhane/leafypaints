@@ -777,7 +777,8 @@ body {
   transform: translate(-50%, -50%);
   list-style: none;
   text-align: center;
-  width: 100%; }
+  width: 100%;
+  display: none; }
 
 .navigation__item {
   margin: 1rem; }
