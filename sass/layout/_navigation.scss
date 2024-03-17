@@ -153,6 +153,8 @@
   top: -3rem;
   right: -1rem;
   border-radius: 50%;
+  box-shadow: 0 1rem 3rem rgba($color-black, .15);
+
 
   @include respond(phone){
     right: -2.5rem;

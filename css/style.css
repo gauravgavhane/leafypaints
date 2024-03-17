@@ -849,7 +849,8 @@ body {
   height: 5.5rem;
   top: -3rem;
   right: -1rem;
-  border-radius: 50%; }
+  border-radius: 50%;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15); }
   @media only screen and (max-width: 37.5em) {
     .btn-wrapper {
       right: -2.5rem; } }
@@ -896,7 +897,7 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5px; }
+  gap: 10px; }
   @media only screen and (max-width: 37.5em) {
     .gallery {
       grid-template-columns: repeat(2, 1fr); } }
@@ -905,12 +906,12 @@ body {
     aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 1rem;
-    box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
     transition: all .2s;
     outline-offset: .5rem; }
     .gallery__image:hover {
       outline: 0.5rem solid #55c57a;
-      transform: scale(1.05) translateY(-1.5rem); }
+      transform: scale(1.05) translateY(-1.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5); }
 
 .navigation {
   position: fixed;
