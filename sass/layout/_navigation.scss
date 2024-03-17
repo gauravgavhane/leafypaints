@@ -4,7 +4,7 @@
   right: -0.7rem;
   top: -2.7rem;
   height: 50px;
-  width: 5ß0px;
+  width: 50px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 
@@ -96,7 +96,7 @@
         list-style-type: none;
         padding-right: 1rem;
         transform: translateY(-100%);
-        transition: all 0.5s ease-in-out;;
+        transition: all 0.5s ease-in-out;
     
         &.open {
           transform: translateY(0);
@@ -104,14 +104,10 @@
     
         &__item {
           transform: translateX(100vw);
-          transition: all 0.5s ease-in-out;;
+          transition: all 0.5s ease-in-out;
     
           &.open {
            transform: translateX(0); 
-          }
-    
-          &.active > a {
-            color: $color-grey-dark;
           }
         }
     

@@ -49,5 +49,9 @@
         justify-content: center;
         margin: 10rem 0 5rem 0;
         text-align: center;
+
+        @include respond(phone){
+            margin: 13rem 0 5rem 0;
+        }
     }
 }
