@@ -1,174 +1,164 @@
-.navigation {
-    &__checkbox {
-        display: none;
-    }
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: -0.7rem;
+  top: -2.7rem;
+  height: 50px;
+  width: 5ß0px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
 
-    &__button {
-        background-color: $color-white;
-        height: 7rem;
-        width: 7rem;
-        position: fixed;
-        top: 6rem;
-        right: 6rem;
-        border-radius: 50%;
-        z-index: 2000;
-        box-shadow: 0 1rem 3rem rgba($color-black, .1);
-        text-align: center;
-        cursor: pointer;
-
-        @include respond(tab-port) {
-            top: 4rem;
-            right: 4rem;
-        }
+    &__burger {
+      position: absolute;
+      right: 2rem;
+      top: 5.4rem;
+      width: 30px;
+      height: 3px;
+      background: gray;
+      transition: all 0.5s ease-in-out;
 
         @include respond(phone) {
-            height: 6rem;
-            width: 6rem;
-            top: 3rem;
-            right: 3rem;
+          right: 1.6rem;
+          top: 5.3rem;
+          width: 28px;
+          height: 3px;
         }
+    
+        &::before {
+          content: '';
+          position: absolute;
+          top: -9px;
+          width: 30px;
+          height: 3px;
+          background: gray;
+          transition: all 0.5s ease-in-out;
+
+          @include respond(phone){
+            top: -8px;
+            width: 28px;
+            height: 3px;
+          }
+        }
+    
+        &::after {
+          content: '';
+          content: '';
+          position: absolute;
+          top: 9px;
+          width: 30px;
+          height: 3px;
+          background: gray;
+          transition: all 0.5s ease-in-out;
+
+          @include respond(phone){
+            top: 8px;
+            width: 28px;
+            height: 3px;
+          }
+        }
+    
+        &.open {
+          transform: rotate(180deg);
+          background: transparent;
+    
+          &::before {
+            transform: rotate(45deg) translate(5px, 8px);
+          }
+    
+          &::after {
+            width: 28px;
+            transform: rotate(-45deg) translate(3px, -7px);
+          }
+        }
+      }
     }
-
-    &__background {
-        height: 6rem;
-        width: 6rem;
-        border-radius: 50%;
-        position: fixed;
-        top: 6.5rem;
-        right: 6.5rem;
-        background-image: radial-gradient($color-primary-light, $color-primary-dark);
-        z-index: 1000;
-        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
-
-        @include respond(tab-port) {
-            top: 4.5rem;
-            right: 4.5rem;
-        }
-
-        @include respond(phone) {
-            height: 5rem;
-            width: 5rem;
-            top: 3.5rem;
-            right: 3.5rem;
-        }
-    }
-
-    &__nav {
+    
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      opacity: 0.98;
+      visibility: hidden;
+    
+      &.open {
+        visibility: visible;
+      }
+    
+      .menu-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
         height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1500;
-
-        opacity: 0;
-        width: 0;
-        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-
-    &__list {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        list-style: none;
-        text-align: center;
-        width: 100%;
-        display: none;
-    }
-
-    &__item {
-        margin: 1rem;
-    }
-
-    &__link {
-        &:link,
-        &:visited {
-            display: inline-block;
-            font-size: 3rem;
-            font-weight: 300;
-            padding: 1rem 2rem;
+        overflow: hidden;
+        background: $color-primary;
+        list-style-type: none;
+        padding-right: 1rem;
+        transform: translateY(-100%);
+        transition: all 0.5s ease-in-out;;
+    
+        &.open {
+          transform: translateY(0);
+        }
+    
+        &__item {
+          transform: translateX(100vw);
+          transition: all 0.5s ease-in-out;;
+    
+          &.open {
+           transform: translateX(0); 
+          }
+    
+          &.active > a {
+            color: $color-grey-dark;
+          }
+        }
+    
+        &__link {
+          display: inline-block;
+          text-decoration: none;
+          font-size: 2.5rem;
+          font-weight: 500;
+          letter-spacing: .2rem;
+            padding: 1.4rem 5rem;
             color: $color-white;
             text-decoration: none;
             text-transform: uppercase;
             background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
             background-size: 220%;
             transition: all .4s;
-
-            span {
-                margin-right: 1.5rem;
-                display: inline-block;
-            }
-        }
-        
-        &:hover,
-        &:active {
-            background-position: 100%;
+    
+          &:hover {
             color: $color-primary;
+
+            background-position: 100%;
             transform: translateX(1rem);
+
+            @include respond(phone){
+                color: $color-grey-dark;
+            }
+          }
         }
+      }
     }
+    
+    @for $i from 1 through 6 {
+      .menu-nav__item:nth-child(#{$i}) {
+        transition-delay: ($i * 0.1s) + 0.15s;
+      }
+}
 
+.btn-wrapper {
+  position: absolute;
+  background-color: $color-white;
+  width: 5.5rem;
+  height: 5.5rem;
+  top: -3rem;
+  right: -1rem;
+  border-radius: 50%;
 
-    //FUNCTIONALITY
-    &__checkbox:checked ~ &__background {
-        transform: scale(80);
-    }
-
-    &__checkbox:checked ~ &__nav {
-        opacity: 1;
-        width: 100%;
-    }
-
-
-    //ICON
-    &__icon {
-        position: relative;
-        margin-top: 3.5rem;
-
-        @include respond(phone) {
-            margin-top: 3rem;
-        }        
-
-        &,
-        &::before,
-        &::after {
-            width: 3rem;
-            height: 2px;
-            background-color: $color-grey-dark-3;
-            display: inline-block;
-        }
-
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            transition: all .2s;
-        }
-
-        &::before { top: -.8rem; }
-        &::after { top: .8rem; }
-    }
-
-    &__button:hover &__icon::before {
-        top: -1rem;
-    }
-
-    &__button:hover &__icon::after {
-        top: 1rem;
-    }
-
-    &__checkbox:checked + &__button &__icon {
-        background-color: transparent;
-    }
-
-    &__checkbox:checked + &__button &__icon::before {
-        top: 0;
-        transform: rotate(135deg);
-    }
-
-    &__checkbox:checked + &__button &__icon::after {
-        top: 0;
-        transform: rotate(-135deg);
-    }
+  @include respond(phone){
+    right: -2.5rem;
+  }
 }

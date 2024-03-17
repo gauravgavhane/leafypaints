@@ -20,23 +20,22 @@
 <body>
 
     <div class="navigation">
-        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-
-        <label for="navi-toggle" class="navigation__button">
-            <span class="navigation__icon">&nbsp;</span>
-        </label>
-
-        <div class="navigation__background">&nbsp;</div>
-
-        <nav class="navigation__nav">
-            <ul class="navigation__list">
-                <li class="navigation__item"><a href="./about.html" class="navigation__link">About</a></li>
-                <li class="navigation__item"><a href="./gallery.html" class="navigation__link">Gallery</a></li>
-                <li class="navigation__item"><a href="./features.html" class="navigation__link">Features</a></li>
-                <li class="navigation__item"><a href="./stories.html" class="navigation__link">Stories</a></li>
-                <li class="navigation__item"><a href="#contact" class="navigation__link">Contact</a></li>
-                </ul>
-        </nav>
+        <div class="btn-wrapper">
+            <div class="menu-btn">
+                <span class="menu-btn__burger"></span>
+            </div>
+        </div>
+  
+      <nav class="nav">
+        <ul class="menu-nav">
+          <li class="menu-nav__item active"><a href="index.html" class="menu-nav__link">Home</a></li>
+          <li class="menu-nav__item"><a href="./about.html" class="menu-nav__link">About</a></li>
+          <li class="menu-nav__item"><a href="./gallery.html" class="menu-nav__link">Gallery</a></li>
+          <li class="menu-nav__item"><a href="./features.html" class="menu-nav__link">Features</a></li>
+          <li class="menu-nav__item"><a href="./stories.html" class="menu-nav__link">Stories</a></li>
+          <li class="menu-nav__item"><a href="#contact" class="menu-nav__link">Contact</a></li>
+        </ul>
+      </nav>
     </div>
 
     <div class="header">
@@ -102,13 +101,8 @@
                 <div class="col-1-of-4">
                     <div class="feature-box">
                         <i class="feature-box__icon icon-basic-heart"></i>
-                        <!-- You can use svg like this but it will not have the gradient color -->
-                        <!-- <img src="img/test.svg" class="feature-box__icon"> -->
                         <h3 class="heading-tertiary u-margin-bottom-small">Handmade</h3>
                         <p class="feature-box__text">
-                            <!-- Painted with passion and precision, our handmade pieces showcase true artistry -->
-                            <!-- Our handmade pieces: where passion meets precision, bringing true artistry -->
-                            <!-- Transforming leaves into art, each piece is lovingly painted by hand for a personal touch -->
                             Hand-painted with care, each leaf becomes canvas for unique expression
                         </p>
                     </div>
@@ -120,7 +114,6 @@
                         <h3 class="heading-tertiary u-margin-bottom-small">Natural</h3>
                         <p class="feature-box__text">
                             Inspired by the beauty of nature, our creations bring the outdoors inside
-                            <!-- Bringing the beauty of nature indoors, our creations are inspired by the outdoors -->
                         </p>
                     </div>
                 </div>
@@ -140,7 +133,6 @@
                         <i class="feature-box__icon icon-basic-todo-pencil"></i>
                         <h3 class="heading-tertiary u-margin-bottom-small">Customizable</h3>
                          <p class="feature-box__text">
-                            <!-- Tailored to your preferences, our creations are fully customizable to suit your individual style. -->
                             Our creations are fully customizable to fit your style preferences perfectly
                         </p>
                     </div>
@@ -230,9 +222,7 @@
                             <div class="card__picture card__picture--3">
                                 &nbsp;
                             </div>
-                            <!-- <h4 class="card__heading">
-                                <span class="card__heading-span card__heading-span--3">The Snow Adventurer</span>
-                            </h4> -->
+
                             <div class="card__details">
                                 <ul>
                                     <li>DIY</li>
@@ -368,6 +358,6 @@
 
         </div>
     </div>
-
+    <script src="js/main.js"></script>
 </body>
 </html>
